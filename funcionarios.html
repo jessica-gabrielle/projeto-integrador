@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Quero Mais</title>
+    <script type="text/javascript" src="index.js"></script>
+    <link rel="stylesheet" href="css/photon.css">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+  </head>
+  <body>
+    <div class="window">
+      <header class="toolbar toolbar-header">
+        <h1 class="title">Quero Mais</h1>
+      </header>
+    <div class="window-content">
+      <div class="pane-group">
+        <div class="pane-sm sidebar">            
+            <nav class="nav-group">
+                <h5 class="nav-group-title">Navegação</h5>
+                <span class="nav-group-item">
+                        <a style="text-decoration: none; color: black;" href="index.html"><span class="icon icon-home"></span>
+                            Principal
+                </a></span>
+                <span class="nav-group-item">
+                  <span class="icon icon-basket"></span>
+                  <a style="text-decoration: none; color: black;" href="estoque.html">
+                    Estoque
+                  </a></span>
+                <span class="nav-group-item active">
+                    <a style="text-decoration: none; color: black;" href="funcionarios.html"><span class="icon icon-vcard"></span>
+                        Funcionários</a>
+                </span>
+              </nav>
+        </div>
+        <div class="pane">
+            <h2>Funcionarios</h2>
+                <form class="form">
+                    Pesquisar: <input type="search" name="" id="pesquisar">
+                      <br><br><table class="table">
+                        <thead>
+                          <tr>
+                            <th>ADMIN</th>
+                            <th>#</th>
+                            <th>id</th>
+                            <th>Nome</th>
+                            <th>CPF</th>
+                            <th>Email</th>
+                            <th>Telefone</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr id="lista-funcionarios">
+                            <td><input type="checkbox" name="admin" id="admin"></td>
+                            <td><input type="radio" name="selecionar" id="selecionar"></td>
+                            <td id="id"></td>
+                            <td id="nome"></td>
+                            <td id="cpf"></td>
+                            <td id="email"></td>
+                            <td id="telefone"></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <div class="button"></div>
+                        <button type="button" id="cancelar" class="btn btn-negative">Excluir</button>      
+                        <button type="button" id="editar" class="btn btn-primary">Editar</button>                                              
+                        <button type="button" id="adicionar" class="btn btn-warning" onclick="window.location.href='cadastro-funcionarios.html'">Novo</button>
+                        <button type="button" id="confirmar" class="btn btn-positive">Confirmar</button>                    
+                    </div>  
+                </form>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+    
+  </body>
+</html>

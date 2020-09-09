@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <link rel="stylesheet" href="css/photon.css">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+  </head>
+  <body>
+    <div class="window">
+      <header class="toolbar toolbar-header">
+        <h1 class="title">Quero Mais</h1>
+      </header>
+    <div class="window-content">
+      <div class="pane-group">
+        <div class="pane-sm sidebar">
+          <nav class="nav-group">
+            <h5 class="nav-group-title">Navegação</h5>
+            <span class="nav-group-item">
+                    <a style="text-decoration: none; color: black;" href="index.html"><span class="icon icon-home"></span>
+                        Principal
+            </a></span>
+            <span class="nav-group-item active">
+              <span class="icon icon-basket">
+                    <a style="text-decoration: none; color: black;" href="estoque.html">
+            </span>
+                        Estoque
+                    </a>
+            </span>
+            <span class="nav-group-item">
+                <a style="text-decoration: none; color: black;" href="funcionarios.html"><span class="icon icon-vcard"></span>
+                    Funcionários</a>
+            </span>
+          </nav>
+        </div>
+        <div class="pane">
+          <form action="" id="funcionarios" class="form">
+            <legend>
+              <h2> Cadastro de Produtos</h2>
+            </legend>
+              <div class="form-group">
+                <input type="number" id="codigo-produto" class="form-control" placeholder="Codigo do Produtos">
+              </div>
+              <div class="form-group">
+                <input type="text" id="Nome-produto" class="form-control" placeholder="Nome do Produtos">
+              </div>
+
+              
+              <div class="form-produto">
+                <input type="number" id="Quantidade" class="form-pro" placeholder="Quantidade em Estoque">
+              
+              
+                <input type="number" id="custoMedio" class="form-pro" placeholder="Custo Medio">
+            
+             
+                <input type="number" id="valorEstoque" class="form-pro" placeholder="Valor do Estoque">
+              
+              </div>
+              <br>
+              <div class="button">
+                <button type="button" id="cancelar" class="btn btn-negative" onclick="window.location.href='estoque.html'">Cancelar</button>     
+                  <button type="button" id="limpar" class="btn btn-default">Limpar</button>
+                  <button type="button" id="salvar" class="btn btn-positive">Salvar</button>
+              </div>              
+            </form>
+        </div>        
+      </div>
+    </div>
+  </div>    
+  </body>
+  <script src="index.js">
+  </script>
+</html>

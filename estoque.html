@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Estoque</title>
+    <script type="text/javascript" src="index.js"></script>
+    <link rel="stylesheet" href="css/photon.css">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+  </head>
+  <body><div class="window">
+    <div class="window-content">
+      <div class="pane-group">
+        <div class="pane-sm sidebar">
+            <header class="toolbar toolbar-header">
+                <h1 class="title">Quero Mais</h1>
+              </header>
+            <nav class="nav-group">
+                <h5 class="nav-group-title">Navegação</h5>
+                <span class="nav-group-item">
+                        <a style="text-decoration: none; color: black;" href="index.html"><span class="icon icon-home"></span>
+                            Principal
+                </a></span>
+                <span class="nav-group-item active">
+                  <span class="icon icon-basket">
+                        <a style="text-decoration: none; color: black;" href="estoque.html">
+                </span>
+                            Estoque
+                </span></a>
+                <span class="nav-group-item">
+                    <a style="text-decoration: none; color: black;" href="funcionarios.html"><span class="icon icon-vcard"></span>
+                        Funcionários</a>
+                </span>
+              </nav>
+        </div>
+        <div class="pane">
+            <h2>Estoque</h2>
+                <form class="form">
+                    Pesquisar: <input type="search" name="" id="pesquisar">
+                    <br><br><div class="button">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th>#</th>
+                            <th>Codigo do produto</th>
+                            <th>Nome do Produto</th>
+                            <th>Quantidade</th>
+                            <th>Valor unitario</th>                         
+                            <th>Valor Estimado</th>                         
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr id="estoque">
+                            <td><input type="radio" name="editar" id="editar"></td>
+                            <td id="codigo-produto"></td>
+                            <td id="Nome-produto"></td>
+                            <td id="Quantidade"></td>
+                            <td id="valorUnitario"></td>
+                            <td id="valorEstoque"></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                        <button type="button" id="cancelar" class="btn btn-negative">Excluir</button>      
+                        <button type="button" id="editar" class="btn btn-primary">Editar</button>
+                        <button type="button" id="adicionar" class="btn btn-positive" onclick="window.location.href='cadastro-produtos.html'">Novo</button>                      
+                      </div>  
+                </form>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+    
+  </body>
+</html>

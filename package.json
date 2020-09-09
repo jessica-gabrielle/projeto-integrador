@@ -1,0 +1,14 @@
+{
+  "name": "loja",
+  "version": "1.0.0",
+  "description": "venda de bebidas",
+  "main": "main.js",
+  "scripts": {
+    "test": "electron ."
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mysql": "^2.18.1"
+  }
+}
