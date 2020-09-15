@@ -1,0 +1,31 @@
+*{
+    box-sizing: border-box;
+  }
+  body{
+    background-image: url('../images/blue.png');
+    min-width: 470px;
+  }
+  label{
+    display: inline;
+  }
+  form {
+    padding: 1em;
+    margin-top: 15%;
+  }
+  form a{
+    color: white;
+  }
+  form a:hover{
+    color: darkblue;
+  }
+  i{
+    width: 10px;
+  }
+  b{
+    color: white;
+  }
+  #div1{
+    width: 100px;
+    height: 100px;
+  }
+  

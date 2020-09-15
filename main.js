@@ -1,26 +1,43 @@
-const { app, BrowserWindow } = require('electron')
+const {app, BrowserWindow, ipcMain} = require('electron')
+const url = require('url')
+const path = require('path')
+const fs = require("fs");
+
+let logon
+let sistema
+
+function createLogon() {
+  logon = new BrowserWindow({ minWidth:504, minHeight: 600, width: 800, height: 800, webPreferences: {nodeIntegration: true, enableRemoteModule: true}});
+  logon.loadFile('login.html') 
+}
 
 function createWindow () {
   // Cria uma janela de navegação.
-  const win = new BrowserWindow({
-    width: 800,
-    height: 600,
-    webPreferences: {
-      nodeIntegration: true
-    }
-  })
+  sistema = new BrowserWindow({width: 800,height: 600,  webPreferences: {nodeIntegration: true, enableRemoteModule: true}})
 
   // e carrega o arquivo index.html do seu aplicativo.
-  win.loadFile('index.html')
+  sistema.loadURL(url.format ({
+    pathname: path.join(__dirname, 'index.html'),
+    protocol: 'file:',
+    slashes: true
+ }))
+
+  // e carrega o arquivo index.html do seu aplicativo.
+  // win.loadFile('login.html') 
 
   // Abrir o DevTools (aba de ferramentas para desenvolvedores).
-  win.webContents.openDevTools()
+  sistema.webContents.openDevTools()
+}
+
+exports.openWindow = () => {
+  createWindow();
+  logon.destroy();
 }
 
 // Este método será chamado quando Electron terminar de inicializar
 // e também estiver pronto para criar novas janelas do navegador.
 // Algumas APIs podem ser usadas somente depois que este evento ocorre.
-app.whenReady().then(createWindow)
+app.whenReady().then(createLogon)
 
 // Quit when all windows are closed, except on macOS. There, it's common
 // for applications and their menu bar to stay active until the user quits
