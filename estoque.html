@@ -6,7 +6,6 @@
     <script type="text/javascript" src="index.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <link rel="stylesheet" href="css/photon.css">
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
   </head>
   <body><div class="window">
     <header class="toolbar toolbar-header">
@@ -38,8 +37,7 @@
         <div class="pane">
             <h2>Estoque</h2>
                 <form class="form">
-                    Pesquisar: <input type="search" name="" id="pesquisar">
-                    <br><br><div class="button">
+                    <div class="button">
                       <table class="table">
                         <thead>
                           <tr>
@@ -51,19 +49,12 @@
                             <th>Valor Estimado</th>                         
                           </tr>
                         </thead>
-                        <tbody>
-                          <tr id="estoque">
-                            <td><input type="radio" name="editar" id="editar"></td>
-                            <td id="codigo-produto"></td>
-                            <td id="Nome-produto"></td>
-                            <td id="Quantidade"></td>
-                            <td id="valorUnitario"></td>
-                            <td id="valorEstoque"></td>
-                          </tr>
+                        <tbody id="tabelaEstoque">
+                          
                         </tbody>
                       </table>
                         <button type="button" id="cancelar" class="btn btn-negative">Excluir</button>      
-                        <button type="button" id="editar" class="btn btn-primary">Editar</button>
+                        <button type="button" id="editar" onclick="montaTabela()" class="btn btn-primary">Editar</button>
                         <button type="button" id="adicionar" class="btn btn-positive" onclick="window.location.href='cadastro-produtos.html'">Novo</button>                      
                       </div>  
                 </form>
@@ -72,6 +63,8 @@
       </div>
     </div>
   </div>
-    
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" onload="window.$ = window.jQuery = module.exports;"></script>
+  <script src="scripts/estoque.js"></script>
   </body>
 </html>
