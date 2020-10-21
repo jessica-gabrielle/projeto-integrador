@@ -13,7 +13,7 @@ function createLogon() {
 
 function createWindow () {
   // Cria uma janela de navegação.
-  sistema = new BrowserWindow({width: 800,height: 600,  webPreferences: {nodeIntegration: true, enableRemoteModule: true}})
+  sistema = new BrowserWindow({minWidth:850,height: 600,  webPreferences: {nodeIntegration: true, enableRemoteModule: true}})
 
   // e carrega o arquivo index.html do seu aplicativo.
   sistema.loadURL(url.format ({
