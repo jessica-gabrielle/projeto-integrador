@@ -36,32 +36,33 @@
         </div>
         <div class="pane">
           <form action="" id="funcionarios" class="form">
+            <form id="produto">
             <legend>
               <h2> Cadastro de Produtos</h2>
             </legend>
               <div class="form-group">
-                <input type="number" id="codigo-produto" class="form-control" placeholder="Codigo do Produtos">
+                <input type="number" name="codigo" id="codigo-produto" class="form-control" placeholder="Codigo do Produtos">
               </div>
               <div class="form-group">
-                <input type="text" id="Nome-produto" class="form-control" placeholder="Nome do Produtos">
+                <input type="text" name="nome" id="Nome-produto" class="form-control" placeholder="Nome do Produtos">
               </div>
 
               
               <div class="form-produto">
-                <input type="number" id="Quantidade" class="form-pro" placeholder="Quantidade em Estoque">
+                <input type="number" name="quantidade" id="Quantidade" class="form-pro" placeholder="Quantidade em Estoque">
               
               
-                <input type="number" id="custoMedio" class="form-pro" placeholder="Custo Medio">
+                <input type="number" name="custo" id="custoMedio" class="form-pro" placeholder="Custo Medio">
             
              
-                <input type="number" id="valorEstoque" class="form-pro" placeholder="Valor do Estoque">
-              
+                <input type="number" name="valor" id="valorEstoque" class="form-pro" placeholder="Valor do Estoque">
+              </form>
               </div>
               <br>
               <div class="button">
                 <button type="button" id="cancelar" class="btn btn-negative" onclick="window.location.href='estoque.html'">Cancelar</button>     
-                  <button type="button" id="limpar" class="btn btn-default">Limpar</button>
-                  <button type="button" id="salvar" class="btn btn-positive">Salvar</button>
+                  <button type="reset" value="limpar" id="limpar" onclick="myFunction()"  class="btn btn-default">Limpar</button>
+                  <button type="submit" id="salvar" onclick="botaoSalvar()" class="btn btn-positive">Salvar</button>
               </div>              
             </form>
         </div>        
@@ -69,6 +70,12 @@
     </div>
   </div>    
   </body>
-  <script src="index.js">
-  </script>
+  <script src="index.js"> </script>
+    <script src="scripts/vendas.js"></script>
+      <script>
+        function myFunction() {
+          document.getElementById("funcionarios").reset();
+        }
+      </script>
+ 
 </html>

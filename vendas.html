@@ -3,10 +3,11 @@
   <head>
     <meta charset="UTF-8">
     <title>Quero Mais</title>
-    <script>console.log(process.type)</script>
+   
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <link rel="stylesheet" href="css/photon.css">
     <link rel="stylesheet" href="css/vendas.css">
+   
   </head>
   <body>
     <div class="window">
@@ -44,17 +45,17 @@
             <div class="row">
                 <div class="col-md-6">
                     <label>Cod. Produto</label>
-                    <input type="text" class="col-md-12">
+                    <input type="text" class="col-md-12" id="codigo">
                 </div>
                 <div class="col-md-6">
                     <label>Quantidade</label>
-                    <input type="number" class="col-md-12">
+                    <input type="number" class="col-md-12" id="quantidade">
                 </div>
             </div><br>
 
             <div class="row">
-                <div class="col-md-12">
-                    <button class="btn btn-lg btn-info btn-block">Gravar</button>
+                <div class="btn-block">
+                    <button type="submit" id="gravar" onclick="tabela()" class="btn btn-lg btn-info btn-block" >Gravar</button>
                 </div>
             </div><br>
 
@@ -70,35 +71,8 @@
                             <th>Valor Total</th>
                           </tr>
                         </thead>
-                        <tbody>
-                          <tr>
-                            <td>photon.css</td>
-                            <td>CSS</td>
-                            <td>28K</td>
-                            <td>CSS</td>
-                            <td>28K</td>
-                          </tr>
-                          <tr>
-                            <td>photon.css</td>
-                            <td>CSS</td>
-                            <td>28K</td>
-                            <td>CSS</td>
-                            <td>28K</td>
-                          </tr>
-                          <tr>
-                            <td>photon.css</td>
-                            <td>CSS</td>
-                            <td>28K</td>
-                            <td>CSS</td>
-                            <td>28K</td>
-                          </tr>
-                          <tr>
-                            <td>photon.css</td>
-                            <td>CSS</td>
-                            <td>28K</td>
-                            <td>CSS</td>
-                            <td>28K</td>
-                          </tr>
+                        <tbody id="tabelasEstoque">
+                          
                         </tbody>
                         <tfoot>
                             <th></th>
@@ -107,16 +81,18 @@
                             <th></th>
                             <th><b>Total:</b></th>
                         </tfoot>
+                        
                     </table>
                 </div>
             </div><br>
 
             <div class="row">
                 <div class="col-md-6">
-                    <button class="btn btn-lg btn-danger btn-block">Cancelar</button>
+                    <button class="btn btn-lg btn-danger btn-block"  onclick="window.location.href='vendas.html'">Cancelar</button>
+                    
                 </div>
                 <div class="col-md-6">
-                    <button class="btn btn-lg btn-success btn-block">Pagamento</button>
+                    <button class="btn btn-lg btn-success btn-block" onclick="pagamento()" >Pagamento</button>
                 </div>
             </div>
         </div>
@@ -128,5 +104,11 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" onload="window.$ = window.jQuery = module.exports;"></script>
   <script src="scripts/vendas.js"></script>
+  <script>
+    function pagamento(){
+      alert("OBRIGADO PELA COMPRA");
+    }
+  </script>
+  </script>
   </body>
 </html>
