@@ -1,37 +1,70 @@
-$('document').ready(function(){
+$(document).ready(function(){
+
     
-})
 
-function listaFunc() {
-var func = []
-
-func[0] = {
-    nome : 'Jose Ricardo',
-    cpf: 11122233312,
-    email: 'josericardo@gmail.com',
-    telefone: 33231238
+});
+function Adicionar() {
+    $('#tblFuncionario tbody').append(
+        "<tr>"+
+        "<td><input type='text'/></td>"+
+        "<td><input type='text'/></td>"+
+        "<td><input type='text'/</td>"+
+        "<td><input type='text'/></td>"+
+        "<td><button type='button' id='btnSalvar' class='btn btn-positive'>Salvar</button> <button type='button' id='btnExcluir' class='btn btn-negative'>Excluir</button></td>"+
+        "</tr>");
+        $("#btnSalvar").bind("click", Salvar);
+        $("#btnExcluir").bind("click", Excluir);
+    
 };
-func[1] = {
-    nome : 'Mirian Rodrigues',
-    cpf: 11122233312,
-    email: 'mirianr@gmail.com',
-    telefone: 33231238
+
+function Salvar() {
+    var par = $(this).parent().parent(); //tr
+    var tdNome = par.children("td:nth-child(1)");
+    var tdCpf = par.children("td:nth-child(2)");
+    var tdEmail = par.children("td:nth-child(3)");
+    var tdTelefone = par.children("td:nth-child(4)");
+    var tdBotoes = par.children("td:nth-child(5)");
+
+    tdNome.html(tdNome.children("input[type=text]").val());
+    tdCpf.html(tdCpf.children("input[type=text]").val());
+    tdEmail.html(tdEmail.children("input[type=text]").val());
+    tdTelefone.html(tdTelefone.children("input[type=text]").val());
+    tdBotoes.html("<button type='button' id='btnExcluir' class='btn btn-negative'>Excluir</button> <button type='button' id='btnEditar' class='btn btn-primary'>Editar</button>");
+
+    $("#btnEditar").bind("click", Editar);
+    $("#btnExcluir").bind("click", Excluir);  
+
 };
-func[2] ={
-    nome : 'Rafael Oliveira',
-    cpf: 11122233312,
-    email: 'rafael@gmail.com',
-    telefone: 33231238
+
+function Editar() {
+    var par = $(this).parent().parent(); //tr
+    var tdNome = par.children("td:nth-child(1)");
+    var tdCpf = par.children("td:nth-child(2)");
+    var tdEmail = par.children("td:nth-child(3)");
+    var tdTelefone = par.children("td:nth-child(4)");
+    var tdBotoes = par.children("td:nth-child(5)");
+    
+    tdNome.html("<input type='text' id='txtNome' value='"+tdNome.html()+"'/>");
+    tdCpf.html("<input type='text' id='txtCpf' value='"+tdCpf.html()+"'/>");
+    tdEmail.html("<input type='text' id='txtEmail' value='"+tdEmail.html()+"'/>");
+    tdTelefone.html("<input type='text' id='txtTelefone' value='"+tdTelefone.html()+"'/>");
+    tdBotoes.html("<button type='button' id='btnSalvar' class='btn btn-positive'>Salvar</button>");
+
+    $("#btnSalvar").bind("click", Salvar);
+    $("#btnEditar").bind("click", Editar);
+    $("#btnExcluir").bind("click", Excluir); 
+
 };
-var html = func;
 
-for(var i = 0; i <= 2; i++){
+function Excluir() {
+    var par = $(this).parent().parent(); //tr
+    par.remove();
+};
 
-html += '<tr><td><input type="checkbox" name="admin" id="admin"></td> <td><input type="radio" name="selecionar" id="selecionar"></td><td id="id">'+ i +'</td><td id="nome">'+ func[i].nome +'</td><td id="cpf">'+ func[i].cpf +'</td><td id="email">'+ func[i].email +'</td><td id="telefone">'+ func[i].telefone +'</td></tr>';
-
-
-
-}
-
-$('#tabelaFuncionario').html(html);
-}
+$(function() {
+    //Código das funções Adicionar, Salvar, Editar e Excluir
+    $("#btnEditar").bind("click", Editar);
+    $("#btnExcluir").bind("click", Excluir);
+    $("#novo").bind("click", Adicionar);
+    
+});

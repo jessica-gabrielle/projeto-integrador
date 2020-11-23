@@ -38,27 +38,23 @@
         <div class="pane">
             <h2>Funcionarios</h2>
                 <form class="form">
-                    <table class="table">
+                    <table id="tblFuncionario">
                         <thead>
                           <tr>
-                            <th>ADMIN</th>
+                            <!--<th>ADMIN</th>
                             <th>#</th>
-                            <th>id</th>
+                            <th>id</th>-->
                             <th>Nome</th>
                             <th>CPF</th>
                             <th>Email</th>
                             <th>Telefone</th>
+                            <th></th>
                           </tr>
                         </thead>
-                        <tbody id="tabelaFuncionario">
-
+                        <tbody>
                         </tbody>
                       </table>
-                      <div class="button"></div>
-                        <button type="button" id="cancelar" class="btn btn-negative">Excluir</button>      
-                        <button type="button" id="editar" class="btn btn-primary">Editar</button>                                              
-                        <button type="button" id="adicionar" class="btn btn-warning" onclick="window.location.href='cadastro-funcionarios.html'">Novo</button>
-                        <button type="button" id="confirmar" onclick = "listaFunc()" class="btn btn-positive">Confirmar</button>                    
+                        <button type="button" id="novo" class="btn btn-positive">Novo</button>                    
                     </div>  
                 </form>
         </div>
